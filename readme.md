@@ -15,7 +15,7 @@
 
 ### How to push work to github
 1) in terminal, type => git add -A
-2) in terminal, type => git commit -m "description in quotes"
+2) in terminal, type => git commit -m "description of work you've done recently in quotes"
 3) in terminal, type => git push
 
 
@@ -23,7 +23,3 @@
 1) in terminal type => os test
 2) select project
 
-### How to use opspark tool to submit projects
-1) in terminal, type => os submit
-2) select bootcamp session
-3) select project to submit
