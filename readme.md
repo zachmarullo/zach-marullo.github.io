@@ -15,7 +15,7 @@
 
 ### How to push work to github
 1) in terminal, type => git add -A
-2) in terminal, type => git commit -m "description of work you've done recently in quotes"
+2) in terminal, type => git commit -m "description of work you've done recently inside these quotation marks"
 3) in terminal, type => git push
 
 
