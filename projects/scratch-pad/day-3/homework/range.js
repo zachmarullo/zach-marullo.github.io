@@ -23,9 +23,7 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
-    
-    
+
     
     // YOUR CODE GOES ABOVE HERE //
 }
