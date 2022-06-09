@@ -26,17 +26,14 @@ function range(start, end) {
     var array1 = [];
     if (start > end){
         for (var i = start; i >= end; i--){
-            array1.push(range[i]);
-            return array1;
-        }
-    } else if (start < end) {
-        for (var i = start; i <= end; i++){
-            array1.push(range[i]);
+            array1.push(i);
         }
     } else {
-        array1.push(start);
-        return array1;
-    }
+        for (var i = start; i <= end; i++){
+            array1.push(i);
+        } 
+    
+    }return array1;
 
     
     // YOUR CODE GOES ABOVE HERE //

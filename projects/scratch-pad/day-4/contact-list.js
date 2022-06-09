@@ -15,7 +15,7 @@
  *       
  *      1. length(): returns the number of contacts within the list.
  *      2. addContact(contact): takes a contact object to be added to the 
- *         contact-list.
+ *         contact-list(whenever contact-list is used they are referring to contacts array).
  *      3. findContact(fullName): takes a full-name String, like 'Max Gaudin', and 
  *         returns the contact object if found in the contacts-list, or, 
  *         undefined if the fullName does not match any contacts in the list.
@@ -43,15 +43,26 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
+        },
+        addContact: function(contact){
+            contacts.push(contact);
+        },
+        findContact: function(fullName){
+             // 'Max Gaudin'
+                // iterate through the contacts
+                    // determine if the current contact matches the fullName parameter
+                        // if true, return contact
+                // return undefined
+            }
         }
     }
-}
+
 
 
 
