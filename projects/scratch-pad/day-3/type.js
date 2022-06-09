@@ -14,6 +14,11 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
+if (Array.isArray(value)){
+    return true;
+} else {
+    return false;
+}
 
     // YOUR CODE ABOVE HERE //
 }
@@ -28,10 +33,7 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+     
     // YOUR CODE ABOVE HERE //
 }
 

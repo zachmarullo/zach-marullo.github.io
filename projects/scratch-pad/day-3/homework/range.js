@@ -23,6 +23,12 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
+    var array1 = [];
+    if (start > end){
+        for (var i = start.length; i >= end; i--){
+    
+        }
+    }
 
     
     // YOUR CODE GOES ABOVE HERE //
