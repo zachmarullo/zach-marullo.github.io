@@ -34,8 +34,6 @@ function range(start, end) {
         } 
     
     }return array1;
-
-    
     // YOUR CODE GOES ABOVE HERE //
 }
 

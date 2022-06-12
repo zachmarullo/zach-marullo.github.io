@@ -70,9 +70,18 @@ function makeContactList() {
                 contacts.splice(i ,1);
             }
          }
-        }
-        }
-    }
+        },
+        printAllContactNames: function(){
+            var string = '';
+            for (var i = 0; i < contacts.length; i++){
+                if (i === contacts.length - 1){
+                string += contacts[i].nameFirst + " " + contacts[i].nameLast;
+                }else {
+                string += contacts[i].nameFirst + " " + contacts[i].nameLast + "\n";
+                }
+             } return string;
+        }   
+    }}
 
 
 
