@@ -77,10 +77,25 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    if (typeof value === 'string'){
+        return "string";
+    }else if (typeof value === 'object' && Array.isArray(value) === true){
+        return 'array';
+    } else if (typeof value === 'object' && Array.isArray(value) === false && value !== null && value instanceof Date === false){
+        return 'object';
+    } else if (typeof value === 'undefined'){
+        return 'undefined';
+    } else if (typeof value === 'number'){
+        return 'number';
+    } else if (typeof value === 'boolean'){
+        return 'boolean';
+    } else if (typeof value === 'object' && value === null){
+        return 'null';
+    } else if (typeof value === 'function'){
+        return 'function';
+    } else if (typeof value === 'object' && Array.isArray(value) === false && value !== null && value instanceof Date === true){
+        return 'date';
+    }
     // YOUR CODE ABOVE HERE //
 }
 
