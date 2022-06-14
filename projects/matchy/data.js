@@ -101,10 +101,14 @@ animals.push(dog);
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//initialized array of friends. Using array because it is a list of all friends(similar items)
+var friends = [];
+function getRandom(array){
+  return Math.floor(Math.random(array.length) * array.length);
+};
 
-
-
-/**
+  /**
+ * 
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"
  */
