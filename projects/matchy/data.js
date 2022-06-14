@@ -107,6 +107,7 @@ function getRandom(array){
   return Math.floor(Math.random(array.length) * array.length);
 };
  friends.push(animals[getRandom(animals)].name);
+ duck['friends'] = ['horse', 'gorilla'];
 
 
   /**
