@@ -144,10 +144,15 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-   var output = [];
-   for (var i = 0; i < array.length; i++){
-       
-   }
+    var output = [];
+    for (var i = 0; i < array.length; i++){
+        var iname = array[i].name;
+        var friends = array[i].friends;
+        if (iname != name && !friends.includes(name)){
+            output.push(iname);
+        }
+    }
+    return output;
 }
 
 //////////////////////////////////////////////////////////////////////
