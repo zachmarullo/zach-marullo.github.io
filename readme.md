@@ -23,3 +23,11 @@
 1) in terminal type => os test
 2) select project
 
+
+## How to access lodown project
+
+1) in terminal, type => cd ..
+2) click the 3 horizontal lines => new file
+3) delete all but "\workspace\"
+4) choose lodown file
+
