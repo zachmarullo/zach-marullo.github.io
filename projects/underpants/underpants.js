@@ -93,6 +93,7 @@ _.first = function(array, num){
     if (num > array.length){
         return array;
     }
+    return array.slice(0, num)
 }
 
 /** _.last
@@ -125,6 +126,7 @@ _.last = function(array, number){
     if (number > array.length){
         return array;
     }
+    return array.slice(number - 1, array.length)
 }
 
 /** _.indexOf
