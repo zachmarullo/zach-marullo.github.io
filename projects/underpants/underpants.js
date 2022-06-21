@@ -145,6 +145,15 @@ _.last = function(array, number){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf = function(array, value){
+    for (let i = 0; i < array.length; i++){
+        if (array[i] === value){
+            return i;
+        } 
+    }
+    return -1;
+}
+
 /** _.contains
 * Arguments:
 *   1) An array
@@ -159,7 +168,13 @@ _.last = function(array, number){
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
-
+_.contains = function(array, value){
+    var containsVal = false;
+    for (let i = 0; i < array.length; i++){
+        array[i] === value ? containsVal = true : containsVal;
+    }
+    return containsVal;
+}
 
 /** _.each
 * Arguments:
@@ -185,7 +200,6 @@ _.each = function(collection, func){
         for (var key in collection){
             func(collection[key], key, collection)
         }
-
     }
 };
 
@@ -198,7 +212,15 @@ _.each = function(collection, func){
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
-
+_.unique = function(arr){
+    var newArr = [];
+    for(var i = 0; i < arr.length; i++){
+       if(_.indexOf(newArr, arr[i]) === -1){
+            newArr.push(arr[i])
+       }
+    } 
+    return newArr;
+}
 
 /** _.filter
 * Arguments:
@@ -301,6 +323,15 @@ _.each = function(collection, func){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+
+// function every(array, test){
+//     for (var i = 0; i < array.length; i++){
+//         if (test(array[i]) === false){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
 
 /** _.some
 * Arguments:
