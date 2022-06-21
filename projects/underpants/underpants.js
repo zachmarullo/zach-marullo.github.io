@@ -61,7 +61,7 @@ if (typeof value === 'string'){
     } else if (typeof value === 'function'){
         return 'function';
     }
-};
+}
 
 /** _.first
 * Arguments:
@@ -80,10 +80,19 @@ if (typeof value === 'string'){
 *   _.first(["a", "b", "c"], 1) -> "a"
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
-_.first(array, number) {
-    if (Array.isArray(array) === False){
-        return []
-    } else if (number.isNan === True)
+_.first = function(array, num){
+    if (!Array.isArray(array)){
+        return [];
+    }
+    if (isNaN(num)){
+        return array[0];
+    }
+    if (num < 0){
+        return [];
+    }
+    if (num > array.length){
+        return array;
+    }
 }
 
 /** _.last
@@ -103,7 +112,20 @@ _.first(array, number) {
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
-
+_.last = function(array, number){
+    if(!Array.isArray(array)){
+        return [];
+    }
+    if(isNaN(number)){
+        return array[array.length - 1];
+    }
+    if (number < 0){
+        return [];
+    }
+    if (number > array.length){
+        return array;
+    }
+}
 
 /** _.indexOf
 * Arguments:
@@ -120,7 +142,6 @@ _.first(array, number) {
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
-
 
 /** _.contains
 * Arguments:
