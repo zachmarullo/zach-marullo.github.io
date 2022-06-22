@@ -237,7 +237,16 @@ _.unique = function(arr){
 * Extra Credit:
 *   use _.each in your implementation
 */
-
+_.filter = function(array, filterFunc){
+    let filterArr = [];
+    for (let i = 0; i < array.length; i++){
+        let result = filterFunc(array[i], i, array);
+        if (result) {
+            filterArr.push(array[i]);
+        }
+    }
+    return filterArr;
+}
 
 /** _.reject
 * Arguments:
@@ -251,7 +260,16 @@ _.unique = function(arr){
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
-
+_.reject = function(array, func){
+    var rejectArr = [];
+    for (let i = 0; i < array.length; i++){
+        let result = func(array[i], i, array);
+        if (!result) {
+            rejectArr.push(array[i]);
+        }
+    }
+    return rejectArr;
+}
 
 /** _.partition
 * Arguments:
