@@ -54,12 +54,38 @@ console.log(myName); // => prints Bob to the console because variable has been r
  * When reading a program, the compiler will "hoist" things, meaning bringing them to the
  * top of the file, so that your compiler is able to read global variables on lines
  * even before they are declared.
- * 
+ * VAR:
+ * _________________________________________________________________________________________
  * Var is the only hoisted variable keyword. This is because var naturally has global scope.
  * The keywords "let" and "const" naturally take on block scope, but can have global scope
  * if they are declared in the global scope of the program you're developing.
+ * LET:
+ * _________________________________________________________________________________________
+ * Let is another variable keyword. Let naturally has "block scope", but can be global scope if it is written in the global
+ * scope of your file. Let CANNOT be redeclared, but can be re-assigned.
+ * 
+ * CONST:
+ * _________________________________________________________________________________________
+ * 
+ * The const keyword CANNOT be redeclared or re-assigned. Const, like let, also naturally takes on a block scope, unless it
+ * is declared in the global scope of the file you are working in. The purpose of the const keyword is to declare CONSTANT
+ * variables, or something that will never change throughout your program.
+ * 
  * 
  * Block Scope = when you have a variable that is "block scoped", you can only use it
  * in THAT block of code it is written in.
- * 
  */
+
+// Examples of LET and CONST:
+function loopArray(array){
+    for (let i = 0; i < array.length; i++){
+    }
+    return array[i];
+}
+// The "i" inside of the function has a "block scope" of that function and cannot be called outside of that function's scope.
+
+const myName = "Zach";
+
+// example of a constant variable, myName, which will not change.
+// attempting to redeclare or reassign a const variable will cause a syntax error as seen below:
+//SyntaxError: Identifier 'myName' has already been declared
