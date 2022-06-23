@@ -220,7 +220,7 @@ _.unique = function (arr) {
         }
     }
     return newArr;
-}
+};
 
 /** _.filter
 * Arguments:
@@ -246,7 +246,7 @@ _.filter = function (array, filterFunc) {
         }
     }
     return filterArr;
-}
+};
 
 /** _.reject
 * Arguments:
@@ -269,7 +269,7 @@ _.reject = function (array, func) {
         }
     }
     return rejectArr;
-}
+};
 
 /** _.partition
 * Arguments:
@@ -334,7 +334,7 @@ _.map = function (collection, func) {
         }
     }
     return newArr;
-}
+};
 
 /** _.pluck
 * Arguments:
@@ -346,10 +346,12 @@ _.map = function (collection, func) {
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
-_.pluck = function(array, property){
-    
-}
-
+_.pluck = function (array, prop) {
+    var result = _.map(array, function (element) {
+        return element[prop];
+    });
+    return result;
+};
 /** _.every
 * Arguments:
 *   1) A collection
@@ -451,6 +453,8 @@ _.reduce = function (array, func, seed) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+//_.extend = function(target, ...objects){
+// objects = []}  
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

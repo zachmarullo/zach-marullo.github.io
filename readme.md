@@ -31,3 +31,7 @@
 3) delete all but "\workspace\"
 4) choose lodown file
 
+
+## How to test let-s-get-functional
+1) cd into workspace (type cd .. in terminal until terminal reads /workspace)
+2) Copy the code from line 19 in index.js into the terminal
