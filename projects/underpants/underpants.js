@@ -326,7 +326,6 @@ _.map = function (collection, func) {
             let result = func(collection[i], i, collection);
             newArr.push(result);
         }
-
     } else {
         for (var key in collection) {
             let result = func(collection[key], key, collection);

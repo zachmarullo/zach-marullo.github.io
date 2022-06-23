@@ -32,9 +32,24 @@ var maleCount = function(array) {
     return males.length;
 };
 
-var femaleCount;
+var femaleCount = function(array) {
+    var females = _.reduce(array, function(numFemales, customer){
+       if (customer.gender === 'female'){
+        numFemales += 1;
+       }
+       return numFemales;
+    }, 0);
+    return females;
+};
 
-var oldestCustomer;
+var oldestCustomer = function(array) {
+    var oldest = _.reduce(array, function(oldestCustomer, customer){
+        if (customer.age > oldestCustomer.age){
+            return customer;
+        }
+    });
+    return oldest.name;
+};
 
 var youngestCustomer;
 
