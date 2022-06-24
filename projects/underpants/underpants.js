@@ -389,13 +389,13 @@ _.every = function (collection, test) {
     } else {
         if (Array.isArray(collection)) {
             for (let i = 0; i < collection.length; i++) {
-                if (!test(collection[i])) {
+                if (!test(collection[i], i, collection)) {
                     return false;
                 }
             }
         } else {
             for (var key in collection) {
-                if (!test(collection[key])) {
+                if (!test(collection[key], key, collection)) {
                     return false;
                 }
             }
@@ -433,7 +433,38 @@ _.every = function (collection, test) {
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
-
+_.some = function(collection, test) {
+    if (test === undefined){
+        if (Array.isArray(collection)) {
+            for (let i = 0; i < collection.length; i++) {
+                if (collection[i]){
+                    return true;
+                } 
+            }
+        } else {
+            for (var key in collection) {
+                if (collection[key]){
+                    return true;
+                }
+            }
+        }
+    } else {
+        if (Array.isArray(collection)) {
+            for (let i = 0; i < collection.length; i++) {
+                if (test(collection[i], i, collection)) {
+                    return true;
+                }
+            }
+        } else {
+            for (var key in collection) {
+                if (test(collection[key], key, collection)) {
+                    return true;
+                }
+            }
+        }
+    } 
+    return false;
+};
 
 /** _.reduce
 * Arguments:
