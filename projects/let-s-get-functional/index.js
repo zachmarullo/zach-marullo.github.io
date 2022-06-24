@@ -45,10 +45,10 @@ var femaleCount = function(array) {
 var oldestCustomer = function(array) {
     var oldest = _.reduce(array, function(oldestCustomer, customer){
         if (customer.age > oldestCustomer.age){
-            return customer;
+            return customer.age;
         }
     });
-    return oldest.name;
+    return customer.name;
 };
 
 var youngestCustomer;
