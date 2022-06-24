@@ -371,7 +371,21 @@ _.pluck = function (array, prop) {
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
-
+_.every = function(collection, test) {
+    if (Array.isArray(collection)){
+        for (let i = 0; i < collection.length; i++){
+            if (!test(collection[i])){
+                return false;
+            }
+        } 
+    } else {
+        for (var key in collection) {
+            if (!test(collection)){
+                return false;
+        }
+    }}
+    return true;
+};
 
 // function every(array, test){
 //     for (var i = 0; i < array.length; i++){
@@ -452,8 +466,10 @@ _.reduce = function (array, func, seed) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
-//_.extend = function(target, ...objects){
-// objects = []}  
+_.extend = function(target, ...objects){
+    objects = Object.assign(target, ...objects);
+    return objects;
+};  
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
