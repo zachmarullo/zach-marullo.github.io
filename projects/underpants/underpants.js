@@ -404,15 +404,6 @@ _.every = function (collection, test) {
     return true;
 };
 
-// function every(array, test){
-//     for (var i = 0; i < array.length; i++){
-//         if (test(array[i]) === false){
-//             return false;
-//         }
-//     }
-//     return true;
-// }
-
 /** _.some
 * Arguments:
 *   1) A collection
