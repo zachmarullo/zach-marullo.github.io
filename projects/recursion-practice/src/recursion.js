@@ -55,7 +55,7 @@ var sumBelow = function(n) {
   if (n > 0){
   return n - 1  + sumBelow(n - 1);
   } else {
-    return n + sumBelow(n + 1) + 1;
+    return n + 1 + sumBelow(n + 1);
   }
 };
 
@@ -73,10 +73,18 @@ var range = function(x, y) {
 var exponent = function(base, exp) {
   if (exp === 0){
     return 1;
-  }
+  } else if (exp === 1){
+    return base;
+  };
+  if (exp > 1){
 let result = base;
- result = result * exponent(base, exp - 1);
+ result *= exponent(base, exp - 1);
  return result;
+  } else {
+    let result = base;
+    result = 1 / base * exponent(base, exp + 1);
+    return result;
+  }
 };
 
 // 8. Determine if a number is a power of two.
