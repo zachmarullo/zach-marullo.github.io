@@ -97,8 +97,14 @@ var friendFirstLetterCount = function(array, customer, letter) {
 }
 
 var friendsCount = function(array, name) {
-
-}
+    var output = [];
+    var count = _.filter(array, function(item){
+        if (item.friends[0] === name){
+            output.push(count);
+        }
+    })
+    return output;
+};
     
 
 var topThreeTags;
