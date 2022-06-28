@@ -62,7 +62,14 @@ var youngestCustomer = function(array) {
     return youngest.name;
 };
 
-var averageBalance;
+var averageBalance = function(array){
+    var total = _.reduce(array, function(accumulator, current){
+        var numString = current.balance.replace(/[$,]/g, "");
+        var num = parseFloat(numString);
+        return accumulator + num;
+    }, 0)
+    return total/ array.length;
+}
 
 var firstLetterCount = function(array, letter) {
     var firstLet = _.filter(array, function(customer) {
@@ -75,9 +82,24 @@ var firstLetterCount = function(array, letter) {
     return firstLet.length;
 };
 
-var friendFirstLetterCount;
+var friendFirstLetterCount = function(array, customer, letter) {
+    var total = 0
+    for (var i = 0; i < array.length; i++){
+        if (array[i].name === customer){
+            for (var j = 0; j < array[i].friends.length; j++){
+                if (array[i].friends[j].name[0].toLowerCase() === letter.toLowerCase()){
+                    total += 1;
+                }
+            }
+        }
+    }
+    return total;
+}
 
-var friendsCount;
+var friendsCount = function(array, name) {
+
+}
+    
 
 var topThreeTags;
 
