@@ -76,7 +76,7 @@ function deepEqual(x, y) {
   var xKeys = object.keys(x);
   var yKeys = object.keys(y);
   for (var i = 0; i < xKeys.length; i++){
-    if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])) {
+    if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]]) {
       return false;
     }
   }
