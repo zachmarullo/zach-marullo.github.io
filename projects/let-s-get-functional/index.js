@@ -109,7 +109,29 @@ var friendsCount = function(array, user){
     return output;
 };
 
-var topThreeTags;
+var topThreeTags = function(array){
+    var allTags = [];
+    for (let i = 0; i < array.length; i++){
+        let tagsA = array[i].tags;
+        for (let j = 0; j < tagsA.length; j++){
+            allTags.push(tagsA[j]);
+        }
+    }
+    var tagsCount = {};
+    for (let i = 0; i < allTags.length; i++) {
+        if (tagsCount[allTags[i]]) {
+            tagsCount[allTags[i]] += 1;
+        } else {
+            tagsCount[allTags[i]] = 1;
+        }
+    }
+    var entries = Object.entries(tagsCount);
+    entries.sort(function(a, b){
+        return b[1] - a[1];
+    });
+    var top3 = [entries[0][0], entries[1][0], entries[2][0]];
+    return top3;    
+};
 
 var genderCount;
 
