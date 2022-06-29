@@ -199,13 +199,22 @@ var reverseArr = function (array, arr = []) {
 // 18. Create a new array with a given value and length.
 // buildList(0,5) // [0,0,0,0,0]
 // buildList(7,3) // [7,7,7]
-var buildList = function(value, length) {
+var buildList = function(value, length, newArr = []) {
+  if (newArr.length === length) {
+    return newArr;
+  }
+  newArr.push(value);
+  return buildList(value, length, newArr);
 };
 
 // 19. Count the occurence of a value inside a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
-var countOccurrence = function(array, value) {
+var countOccurrence = function(array, value, count = 0) {
+  if (!array.length) {
+    return count;
+  }
+  return (array[count] === value) + countOccurrence(array.slice(1), value, count); 
 };
 
 // 20. Write a recursive version of map.
@@ -251,7 +260,13 @@ var nthFibo = function(n) {
 // 26. Given an array of words, return a new array containing each word capitalized.
 // var words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
-var capitalizeWords = function(input) {
+var capitalizeWords = function(input, output = []) {
+  if(input.length === 1) {
+    output.push(input[0].toUpperCase());
+    return output;
+  }
+  output.push(input[0].toUpperCase());
+  return capitalizeWords(input.slice(1), output)
 };
 
 // 27. Given an array of strings, capitalize the first letter of each index.
