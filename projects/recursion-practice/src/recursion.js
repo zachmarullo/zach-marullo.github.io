@@ -179,9 +179,9 @@ var reverseArr = function (array, arr = []) {
   if (array.length === 0){
     return arr;
   }
-  
   arr.push(array[array.length -1]);
-  return reverseArr(array.slice(array.slice(-1)), arr);
+  array.pop();
+  return reverseArr(array, arr);
 };
 
 // 18. Create a new array with a given value and length.
