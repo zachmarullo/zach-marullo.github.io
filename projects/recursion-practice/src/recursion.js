@@ -62,7 +62,15 @@ var sumBelow = function(n) {
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function(x, y) {
+var range = function(x, y, output = []) {
+  const step = x > y ? -1 : 1;
+  if (x === y) {
+    return [];
+  }
+  if (x === y - step) {
+    return [];
+  }
+  return output.concat(x + step, range(x + step, y));
 };
 
 // 7. Compute the exponent of a number.
@@ -96,10 +104,22 @@ var powerOfTwo = function(n) {
 
 // 9. Write a function that accepts a string a reverses it.
 var reverse = function(string) {
+  if(string.length <= 1){
+    return string;
+}
+else {
+    return string.charAt(string.length - 1) + reverse(string.substring(0, string.length - 1));
+}
 };
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  {
+    if(string.length === 1) return true;
+    if(string.length === 2) return string[0] === string[1];
+    if(string[0] === string.slice(-1)) return checkPalindrome(string.slice(1,-1))
+    return false;
+}
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -135,15 +155,33 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+  if (str1[str1.length -1] === str2[str2.length -1] ) {
+    return true;
+  }
+  if (str1[0] === str2[0]) {
+    return compareStr(str1.slice(1), str2.slice(1));
+  }
+  return false;
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
-var createArray = function(str){
+var createArray = function(str, arr = []){
+  if (str.length === 0){
+    return arr;
+  }
+  arr.push(str[0]);
+  return createArray(str.slice(1), arr)
 };
 
 // 17. Reverse the order of an array
-var reverseArr = function (array) {
+var reverseArr = function (array, arr = []) {
+  if (array.length === 0){
+    return arr;
+  }
+  
+  arr.push(array[array.length -1]);
+  return reverseArr(array.slice(array.slice(-1)), arr);
 };
 
 // 18. Create a new array with a given value and length.
