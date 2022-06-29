@@ -290,7 +290,7 @@ var capitalizeFirst = function(array, allCaps = []) {
     return allCaps;
   }
   allCaps.push(array[0].charAt(0).toUpperCase() + array[0].slice(1));
-  return capitalizeFirst(array.slice(1), allCaps)
+  return capitalizeFirst(array.slice(1), allCaps);
 };
 
 // 28. Return the sum of all even numbers in an object containing nested objects.
@@ -312,7 +312,18 @@ var flatten = function(arrays) {
 
 // 30. Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {'p':1, 'o':2, 't':2, 'a':1}
-var letterTally = function(str, obj) {
+var letterTally = function(str, obj = {}) {
+  var length = str.length;
+  var current = str.charAt(0);
+  if (length === 0) {
+    return obj;
+  } else if (obj[current]) {
+    obj[current] ++;
+  } else {
+    obj[current] = 1;
+  }
+  return letterTally(str.slice(1), obj);
+
 };
 
 // 31. Eliminate consecutive duplicates in a list.  If the list contains repeated
@@ -320,7 +331,14 @@ var letterTally = function(str, obj) {
 // elements should not be changed.
 // Example: compress([1, 2, 2, 3, 4, 4, 5, 5, 5]) // [1, 2, 3, 4, 5]
 // Example: compress([1, 2, 2, 3, 4, 4, 2, 5, 5, 5, 4, 4]) // [1, 2, 3, 4, 2, 5, 4]
-var compress = function(list) {
+var compress = function(list, newList = []) {
+  if (list.length === 0) {
+    return newList;
+  }
+  if (list.length > 1 && list[0] !== newList[newList.length -1]) {
+    newList.push(list[0])
+  }
+  return compress(list.slice(1), newList);
 };
 
 // 32. Augment every element in a list with a new value where each element is an array
