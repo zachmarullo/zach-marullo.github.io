@@ -335,7 +335,7 @@ var compress = function(list, newList = []) {
   if (list.length === 0) {
     return newList;
   }
-  if (list.length > 1 && list[0] !== newList[newList.length -1]) {
+  if (list.length >= 1 && list[0] !== newList[newList.length -1]) {
     newList.push(list[0])
   }
   return compress(list.slice(1), newList);
@@ -350,7 +350,14 @@ var augmentElements = function(array, aug) {
 // 33. Reduce a series of zeroes to a single 0.
 // minimizeZeroes([2,0,0,0,1,4]) // [2,0,1,4]
 // minimizeZeroes([2,0,0,0,1,0,0,4]) // [2,0,1,0,4]
-var minimizeZeroes = function(array) {
+var minimizeZeroes = function(array, newArr = []) {
+  if (array.length === 0) {
+    return newArr;
+  }
+  if (array.length >= 1 && array[0] !== newArr[newArr.length -1]) {
+    newArr.push(array[0])
+  }
+  return minimizeZeroes(array.slice(1), newArr);
 };
 
 // 34. Alternate the numbers in an array between positive and negative regardless of
