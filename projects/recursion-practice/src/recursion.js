@@ -141,7 +141,8 @@ var multiply = function(x, y, sum = 0) {
   if (y === 0) {
     return sum;
   }
-  x + x + multiply(x, y - 1, sum)
+  sum += x + x 
+  return multiply(x, y - 1, sum);
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
