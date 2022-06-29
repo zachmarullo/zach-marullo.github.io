@@ -113,12 +113,17 @@ else {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
-  {
-    if(string.length === 1) return true;
-    if(string.length === 2) return string[0] === string[1];
-    if(string[0] === string.slice(-1)) return checkPalindrome(string.slice(1,-1))
+  let text = string.replace(/[\s"'.,-\/#!$%\^&*;:{}=\-_`~()\\\[\]@+|?><]/g, "").toLowerCase();  
+  if(text.length === 1) {
+      return true;
+    }
+    if (text.length === 2) {
+      return text[0] === text[1];
+    }
+    if (text[0] === text.slice(-1)){
+      return palindrome(text.slice(1, -1));
+    }
     return false;
-}
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -133,6 +138,16 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) {
+  if (y === 0 || x === 0){
+    return 0;
+  }
+  if (y === 1 && x !== 0) {
+    return x;
+  }
+  if (x === 1 && y !== 0) {
+    return y;
+  }
+  return x + x + multiply(x, y - 1);
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
