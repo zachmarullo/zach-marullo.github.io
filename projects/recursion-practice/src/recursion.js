@@ -391,7 +391,7 @@ var alternateSign = function(array, newArr = []) {
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
 var numToText = function(str, newStr = '') {
   if (str.length === 0) {
-    return newStr;
+    return newStr.replace(/[0-9]/g, '');;
   }
   if (str[0] === "0") {
     newStr += str[0].replace("0", "zero")
