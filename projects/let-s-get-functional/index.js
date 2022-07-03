@@ -133,7 +133,17 @@ var topThreeTags = function(array){
     return top3;    
 };
 
-var genderCount;
+var genderCount = function(array) {array.reduce(function(obj, customer){
+    if (customer.gender === "female") {
+        obj[customer.gender] += 1;
+    } else if (customer.gender === "male") {
+        obj[customer.gender] += 1;
+    } else if (customer.gender === "non-binary") {
+        obj[customer.gender] += 1;
+    }
+    return obj;
+},{})
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
