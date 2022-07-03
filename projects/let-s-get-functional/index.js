@@ -133,17 +133,17 @@ var topThreeTags = function(array){
     return top3;    
 };
 
-var genderCount = function(array) {array.reduce(function(obj, customer){
-    if (customer.gender === "female") {
-        obj[customer.gender] += 1;
-    } else if (customer.gender === "male") {
-        obj[customer.gender] += 1;
-    } else if (customer.gender === "non-binary") {
-        obj[customer.gender] += 1;
-    }
-    return obj;
-},{})
-};
+var genderCount = function(array) {
+    const genders = _.reduce(array, function(obj, current){
+        if (!obj[current.gender]) {
+            obj[current.gender] = 1;
+        } else {
+            obj[current.gender] ++;
+        }
+        return obj;
+    }, {})
+    return genders;
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
