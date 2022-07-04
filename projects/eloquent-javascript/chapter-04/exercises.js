@@ -4,17 +4,26 @@
 
 function range(start, end, step) {
   var arr1 = [];
-  if (start < end) {
-    for (let i = start; i <= end; i++) {
-      arr1.push(i);
+  if (step === undefined) {
+    if (start < end) {
+      for (let i = start; i <= end; i++) {
+        arr1.push(i);
+      }
+    } else if (start > end) {
+      for (let i = end; i >= start; i--){
+        arr1.push(i);
+      }
+    } else if (start === end) {
+      return arr1;
     }
-  } else if (start > end) {
-    for (let i = end; i >= start; i--){
-      arr1.push(i);
-    }
-  } else if (start === end) {
     return arr1;
+} else if (step !== undefined) {
+  if (start < end) {
+    for (let k = 0; k <= end; k++) {
+      arr1.push(k + step);
+    }
   }
+}
   return arr1;
 };
 
@@ -22,17 +31,28 @@ function range(start, end, step) {
 // sum /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function sum() {
-
+function sum(array) {
+  var count = 0;
+  for (var z = 0; z < array.length; z++) {
+    count += array[z];
+  }
+  return count;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArray ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArray() {
-
-}
+function reverseArray(array) {
+  let arr2 = [];
+  if (array.length === 0) {
+    return arr2;
+  }
+  for (let j = array.length; j > 0; j--) {
+    arr2.push(j);
+  }
+  return arr2;
+};
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArrayInPlace /////////////////////////////////////////////////////////
