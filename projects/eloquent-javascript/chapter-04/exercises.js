@@ -3,29 +3,38 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 function range(start, end, step) {
-  var arr1 = [];
-  if (step === undefined) {
+  let arr1 = [];
+  if (start === end) {
+    return arr1;
+  }
+  if (step === undefined){
     if (start < end) {
-      for (let i = start; i <= end; i++) {
+      for (let i = start; i <= end; i ++){
         arr1.push(i);
       }
-    } else if (start > end) {
-      for (let i = end; i >= start; i--){
-        arr1.push(i);
+    } else {
+      for (let j = start; j >= end; j--) {
+        arr1.push(j)
       }
-    } else if (start === end) {
+    }
+  } else {
+    if (step < 0) {
       return arr1;
     }
-    return arr1;
-} else if (step !== undefined) {
-  if (start < end) {
-    for (let k = 0; k <= end; k++) {
-      arr1.push(k + step);
+    if (start < end) {
+      for (let i = start; i <= end; i += step){
+        arr1.push(i);
+      }
+    } else {
+      for (let j = start; j >= end; j-= step) {
+        arr1.push(j)
+      }
     }
   }
-}
   return arr1;
-};
+}  
+
+ 
 
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
@@ -48,8 +57,8 @@ function reverseArray(array) {
   if (array.length === 0) {
     return arr2;
   }
-  for (let j = array.length; j > 0; j--) {
-    arr2.push(j);
+  for (let j = array.length - 1; j >= 0; j--) {
+    arr2.push(array[j]);
   }
   return arr2;
 };
@@ -66,16 +75,25 @@ function reverseArrayInPlace() {
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function arrayToList() {
-
+function arrayToList(array) {
+  let rest = null;
+  for (var i = array.length - 1; i >= 0; i--) {
+      rest = { value: array[i], rest: rest};
+  }
+  return rest;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // listToArray /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function listToArray() {
-
+function listToArray(list, array=[]) {
+  if (list.rest === null) {
+    array.push(list.value);
+    return array;
+  }
+  array.push(list.value);
+return listToArray(list.rest, array);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
