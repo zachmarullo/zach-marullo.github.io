@@ -35,6 +35,8 @@ for (let i = 0; i < arr.length; i++){
  * 
  * */
 // Note: In the case of multiple conditions, only the first condition that evaluates to true will be executed.
+//Added Note: In the case of else statements, they operate as a sort of default statement, meaning that they will execute
+// if all of the prior conditions in the if...else resolve to false.
 
 /**
  * Falsy Values that will resolve to "false" (and keep a conditional from running)
