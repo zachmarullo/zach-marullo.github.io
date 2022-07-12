@@ -59,6 +59,10 @@ console.log(myName); // => prints Bob to the console because variable has been r
  * Var is the only hoisted variable keyword. This is because var naturally has global scope.
  * The keywords "let" and "const" naturally take on block scope, but can have global scope
  * if they are declared in the global scope of the program you're developing.
+ * 
+ * HOISTING EXAMPLE AT BOTTOM OF PAGE
+ * 
+ * 
  * LET:
  * _________________________________________________________________________________________
  * Let is another variable keyword. Let naturally has "block scope", but can be global scope if it is written in the global
@@ -83,9 +87,16 @@ function loopArray(array){
     return array[i];
 }
 // The "i" inside of the function has a "block scope" of that function and cannot be called outside of that function's scope.
-
+// Trying to access i outside of the function will throw an error because the "let" keyword is block scoped
 const myName = "Zach";
 
 // example of a constant variable, myName, which will not change.
 // attempting to redeclare or reassign a const variable will cause a syntax error as seen below:
 //SyntaxError: Identifier 'myName' has already been declared
+
+
+console.log(test);
+var test;
+
+//This call will result in 'undefined', which is the value of "test". This still works because the keyword var is hoisted to
+// the top of its current scope.(in this case the global scope)

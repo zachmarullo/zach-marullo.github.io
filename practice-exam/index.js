@@ -137,7 +137,7 @@ var firstInClass = function(array, object = {}) {
     if (array.length === 0) {
         return object;
     }
-    object = {...object, ...array[0], };
+    object = {...object, ...array[0]};
     return firstInClass(array.slice(1), object);
 };
 

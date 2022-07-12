@@ -201,3 +201,60 @@ function lastOne(){
     }
 };
 
+/**
+ * 
+ * Unary Operators: A unary operation is an operation with only one operand.
+ *This operand comes either before or after the operator.
+ *Unary operators are more efficient than standard JavaScript function calls. 
+ *Additionally, unary operators can not be overridden, therefore their functionality is guaranteed.
+ */
+
+ //Examples:
+ // Unary plus Operator:
+ let x = 10;
+ let y = +x;
+ //If you place the unary plus before a numeric value it does nothing, but when applied to a non-numeric value, it 
+ //performs a number conversion using the Number() function, which follows a specific set of rules.
+/**
+ * Value	        Result
+boolean	            false to 0, true to 1
+string	            Convert the string value based on a set of specific rules
+object	            Call the valueOf() and/or toString() method to get the value to convert into a number
+ */
+//Example 2:
+let s = '10';
+console.log(+s); //prints the number 10 to the console
+//This will also coerce a boolean value into a number, false to 0 and true to 1
+//Example 3:
+let f = false;
+let t = true;
+console.log(+f); // console logs a 0
+console.log(+t); // console logs a 1
+
+//Unary minus: if you apply the unary minus to a number it will negate the number, for example:
+let xyz = 10;
+console.log(-xyz); // will print -10 to the console
+// Note: if you use the unary minus on a non-numeric value, it converts the value into a number and then negates the value
+
+//Increment/Decrement Operators
+
+let age = 30;
+age++;
+console.log(age); //prints 31 to the console here because age = 30 & "age++" increments the age variable by 1.
+//The inverse works for the decrement operator.
+//Example 2:
+let age2 = 41;
+age2--;
+console.log(age2); // prints 40 to the console because 41 - 1 (from the decrement operator) results in 40
+
+/**
+ * Notes:
+    Unary operators work on one value.
+    Unary plus (+) or minus (-) converts a non-numeric value into a number. The unary minus negates the value after the conversion.
+    The prefix increment operator adds one to a value. The value is changed before the statement is evaluted.
+    The postfix increment operator adds one to a value. The value is changed after the statement is evaluted.
+    The prefix decrement operator subtracts one from a value. The value is changed before the statement is evaluted.
+    The postfix decrement operator subtracts one from a value. The value is changed after the statement is evaluted.
+ */
+
+
