@@ -257,4 +257,31 @@ console.log(age2); // prints 40 to the console because 41 - 1 (from the decremen
     The postfix decrement operator subtracts one from a value. The value is changed after the statement is evaluted.
  */
 
+/**
+ * Ternary Operator: The conditional(ternary) operator is the only JavaScript operator that takes three operands: 
+ * a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed
+ * by a colon(:), and finally the expression to execute if the condition is falsy. This operator is often used as an alternative
+ * to an "if...else" statement.
+ */
+ function getFee(isMember) {
+    return (isMember ? '$2.00' : '$10.00'); // will resolve to either $2.00(if isMember = true) or $10.00(if isMember = false)
+  }
+  console.log(getFee(true));
+  // expected output: "$2.00"
+  
+  console.log(getFee(false));
+  // expected output: "$10.00"
+  
+  console.log(getFee(null));
+  // expected output: "$10.00"
+  
+//Notes: Besides false, falsy expressions are: null, NaN, 0, "", and undefined
 
+const greeting = (person) => {
+    const name = person ? person.name : "stranger"; // will return "Howdy" followed by name if a name is given.
+    return `Howdy, ${name}`;                        // if no name is given this returns "Howdy stranger"
+  }
+  
+  console.log(greeting({ name: "Alice" }));  // "Howdy, Alice"
+  console.log(greeting(null));             // "Howdy, stranger"
+  

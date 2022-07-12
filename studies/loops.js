@@ -83,3 +83,17 @@ do {
 console.log(myArray);
 // Output:
 // [10] because even though k is already 10, the loop does not check the value until the first iteration has completed
+
+//Example of for loop iterating forwards through array:
+
+let myArr = [1, 2, 3, 4, 5];
+
+for (let i = 0; i < myArr.length; i++) {
+  console.log(myArr[i]); // prints 1, 2, 3, 4, 5 to the console because this loop iterates forwards through the array
+};
+
+//Iterating backwards through array:
+
+for (let i = myArr.length - 1; i >= 0; i--) { // this loop iterates backwards throught the "myArr" array
+  console.log(myArr[i])              //"myArr.length - 1" starts on the last value of the array
+};                                   // continues to run until i is less than 0 and decrements i each iteration
