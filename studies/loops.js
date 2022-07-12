@@ -97,3 +97,4 @@ for (let i = 0; i < myArr.length; i++) {
 for (let i = myArr.length - 1; i >= 0; i--) { // this loop iterates backwards throught the "myArr" array
   console.log(myArr[i])              //"myArr.length - 1" starts on the last value of the array
 };                                   // continues to run until i is less than 0 and decrements i each iteration
+// this loop will print 5, 4, 3, 2, 1 to the console because loop is iterating backwards through array
